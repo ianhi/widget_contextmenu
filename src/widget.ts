@@ -45,7 +45,7 @@ export
 class ExampleView extends DOMWidgetView {
   render() {
     this.el.classList.add('custom-widget');
-    this.el.addEventListener('contextmenu', (e: any) => {e.preventDefault});
+    this.el.addEventListener('contextmenu', (e: MouseEvent) => { e.preventDefault() });
 
     this.value_changed();
     this.model.on('change:value', this.value_changed, this);
