@@ -45,6 +45,9 @@ export
 class ExampleView extends DOMWidgetView {
   render() {
     this.el.classList.add('custom-widget');
+
+    // this will prevent browser context menu on chrome
+    // but not on firefox - also the lumino context menu will appear for both
     this.el.addEventListener('contextmenu', (e: MouseEvent) => { e.preventDefault() });
 
     this.value_changed();
